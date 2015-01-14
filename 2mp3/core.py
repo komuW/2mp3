@@ -30,7 +30,6 @@ if 'No such file or directory' in ffmpeg.std_err:
     out = "\n ffmpeg has been succesfully installed. continuing with conversion...\n"
     print out
 
-# cwd = '/vagrant/2mp3/test_songs'
 list_all_in_dir = envoy.run('ls', cwd=cwd)
 std_out = list_all_in_dir.std_out
 
@@ -51,10 +50,6 @@ for song in split_em:
     if argv[2] and argv[2] == '-r':
         envoy.run('rm -f "{0}"'.format(song), cwd=cwd) # remove original file
 
-#import pdb;pdb.set_trace()
-print "ok"
-print "ok"
-print "ok"
-print "cool"
 
-#run(command, data=None, timeout=None, kill_timeout=None, env=None, cwd=None)
+
+#envoy.run(command, data=None, timeout=None, kill_timeout=None, env=None, cwd=None)
