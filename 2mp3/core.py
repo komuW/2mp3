@@ -27,10 +27,22 @@ if 'No such file or directory' in ffmpeg.std_err:
     out = "\n ffmpeg has been succesfully installed. continuing with conversion...\n"
     print out
 
-print "ls", envoy.run('ls -a').std_out
+
 
 the_cmd = 'for i in *.*; do ffmpeg -i "$i" -f mp3 "$i".mp3; done'
 convert = envoy.run(the_cmd)
+
+cwd = '/vagrant/2mp3/test_songs'
+list_all_in_dir = envoy.run('ls', cwd=cwd).std_out
+split_em = list_all_in_dir.split('\n')
+# remove empty items from list
+split_em = filter(None, split_em)
+
+print "BEGINNING CONVERSION, this may take a while.\n"
+for song in split_em:
+    the_cmd = 'ffmpeg -i "{0}" -f mp3 "{1}".mp3'.format(song, song)
+    print "CONVERTING: {0} : INTO AN MP3 FILE...".format(song)
+    convert = envoy.run(the_cmd, cwd=cwd)
 
 import pdb;pdb.set_trace()
 print "ok"

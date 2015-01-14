@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #
-# Set up/ Provision a Vagrant Ubuntu Precise box
+# Set-up/Provision a Vagrant Ubuntu Precise box
 
-echo "setup...."
+echo "setting up and provisioning an ubuntu vm\n...."
 
 sudo apt-get update && \
 sudo apt-get -y install python-software-properties \
