@@ -29,7 +29,7 @@ if 'No such file or directory' in ffmpeg.std_err:
 
 print "ls", envoy.run('ls -a').std_out
 
-the_cmd = 'for i in *.mp3; do ffmpeg -i "$i" -f mp3 "$i".mp3; done'
+the_cmd = 'for i in *.*; do ffmpeg -i "$i" -f mp3 "$i".mp3; done'
 convert = envoy.run(the_cmd)
 
 import pdb;pdb.set_trace()
