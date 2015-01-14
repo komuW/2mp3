@@ -14,7 +14,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box_url = "http://files.vagrantup.com/precise32.box"
 
   # Create a forwarded port mapping which allows access to a specific port 
-  config.vm.network :forwarded_port, guest: 4500, host: 4500,
+  config.vm.network :forwarded_port, guest: 4500, host: 4500
 
   config.ssh.forward_agent = true
   
