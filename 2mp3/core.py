@@ -11,7 +11,6 @@ from sys import argv, exit
 
 
 cwd = None
-
 if len(argv) > 1:
     cwd = argv[1]
 
@@ -50,7 +49,7 @@ for song in split_em:
     convert = envoy.run(the_cmd, cwd=cwd)
 
     if argv[2] and argv[2] == '-r':
-        x = envoy.run('rm -f "{0}"'.format(song), cwd=cwd) # remove original file
+        envoy.run('rm -f "{0}"'.format(song), cwd=cwd) # remove original file
 
 #import pdb;pdb.set_trace()
 print "ok"
