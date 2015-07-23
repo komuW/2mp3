@@ -8,7 +8,7 @@ setup(
     version="0.1.0",
 
     # Application author details:
-    author="Komu",
+    author="komuW",
     author_email="komuw05@gmail.com",
 
     # Packages
